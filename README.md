@@ -2,6 +2,12 @@
 
 ## 6 Haziran Ödevleri:
 - [ ] Github'ın Gitflow'u ile diğer yaklaşımları arasındaki fark nedir? ( gitflow vs ..)
+
+
+[https://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/]: 
+
+
+
 - [ ] [Git and GitHub with Briana Swift](https://www.youtube.com/playlist?list=PLg7s6cbtAD17Gw5u8644bgKhgRLiJXdX4) Youtube Listesi incelensin. (11 Video)
 - [ ] Merge pull request
     - [ ] Create a merge commit
