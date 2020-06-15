@@ -23,6 +23,51 @@
 - GitHub nedir? Açık kaynak ve özel geliştirme projeleri için güçlü işbirliği, inceleme ve kod yönetimi. GitHub, kodu arkadaşlarınızla, iş arkadaşlarınızla, sınıf arkadaşlarınızla ve yabancılarla paylaşabileceğiniz en iyi yerdir. Üç milyondan fazla insan birlikte harika şeyler oluşturmak için GitHub'ı kullanıyor.
 
   Azure DevOps "Proje Yönetimi" kategorisinde bir araç olarak sınıflandırılırken, GitHub "Kod İşbirliği ve Sürüm Kontrolü" altında gruplandırılabilir.
+  
+  # GİTHUB BİRLEŞTİRME YÖNTEMLERİ ARASINDAKİ FARK
+
+
+
+[https://rietta.com/blog/github-merge-types/]: 
+
+### Create a Merge Commit
+
+
+
+- Varsayılan seçenek Github'daki Çekme isteğini birleştirme seçeneği, tüm istekleri çekme isteğinden alır ve birleştirme işleminde yeni bir taahhütle ana şubeye ekler.
+- Örneğin, ilk taahhüt ve 2 yeni taahhüt içeren bir ana master şubemiz var, yeni taahhütler Bir ve İki.
+
+- Yeni bir özellik üzerinde çalışmak için ana daldan ayrılacağız ve özellik dalı adı verilen yeni bir dal oluşturacağız. Biraz iş yaptıktan sonra, ustayla birleştirmek istediğimiz Üç ve Dört tane 2 ek taahhüdümüz olacak.
+
+- Birleştirme çekme isteği kullanılırken, (daha önce master'da hiçbir şeyin birleştirilmediği varsayılarak) 3 ve 4 taahhütleri ana şubeye birleştirme olarak eklenecek ve birleştirme dalı özellik-dalı olarak adlandıracağız. Bu yeni HEAD olacak.
+
+- Depo geçmişini birleştir şube dalını birleştir. Git geçmişi Şubeyi birleştir özellik dalı gibi görünecektir. İleti tarafından sağlanan köprü, 3 ve 4 numaralı taahhütlerle orijinal PR'ye geri dönmenizi sağlar.
+
+  ### Squash and Merge
+
+  
+
+- Squashing, bir şubeye yeniden basmak gibi çalışır, 5 taahhütlü çekme talebi alabilir ve tek bir taahhütte ezebilirsiniz. Bu, birleştirme çekme isteğine benzer görünebilir, ancak farklıdır.
+
+- Geçmişte atılan commit’leri yeniden düzenlemek, isimlendirmek veya birleştirmek için kullanıyoruz.
+
+  ### Rebase and Merge
+
+  - Master a bir branch i rebase ettiğinizde , branch deki commitlerinizi tek tek alıp master ın sonuna ekleyecektir. Sonuç olarak rebase sonucunda tek bir history oluşturur çünkü tamamlanan işi bir branch ten diğerine aktarır. Bu süreçte istenmeyen history ortadan kalkar.
+  - Merge yaptığmızda is yeni bir “ Merge commit” yaratıp iki branchinde tüm history(yapılmış tüm değişiklikleri) sini içerecektir. Master , branch te yapılan tüm değişiklikleri alacak ve entegre edecektir ancak branch in history sinde hiçbir değişiklik olmayacaktır.
+  - Eğer tüm değişiklikleri görmek istiyorsanız merge yapmalısınız çünkü merge tüm değişiklikleri olduğu gibi korur.
+  - Eğer daha sade, anlaşılabilir ve lineer bir commit history istiyor iseniz rebase sizin için daha yaralı olacaktır.
+  - Eğer branchinizi push yaptıysanız merge, yapmadıysanız rebase i kullanmanız doğru olacaktır.
+
+
+
+###       Merge Pull Request          
+
+-   Bir çekme isteğini birleştirmeye hazır olduğunuzda ve hakemler onayladığında, çekme isteği      görünümünün sağ üst kısmındaki Birleştir'i tıklayın. Projede yazma (veya yönetici) izniniz varsa bir    çekme isteğini birleştirebilirsiniz.
+
+  
+
+
 
 [https://stackshare.io/stackups/azure-devops-vs-github]: 
 
