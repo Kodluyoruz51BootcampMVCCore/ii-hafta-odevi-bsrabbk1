@@ -4,13 +4,9 @@
 - [ ] Github'ın Gitflow'u ile diğer yaklaşımları arasındaki fark nedir? ( gitflow vs ..)
 
  
- ##### GitHub vs Gitlab
-
+ ##### [GitHub vs Gitlab](https://about.gitlab.com/devops-tools/github-vs-gitlab.html#recent-github-announcements)
 ![](C:\Users\bebek\OneDrive\Masaüstü\github_comparison.png)
-
-
-
-[https://about.gitlab.com/devops-tools/github-vs-gitlab.html#recent-github-announcements]: 
+ 
 
 ##### GitHub vs Bitbucket
 
