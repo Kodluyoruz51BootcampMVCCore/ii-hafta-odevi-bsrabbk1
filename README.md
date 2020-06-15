@@ -9,12 +9,6 @@
 
 ##### GitHub vs Gitlab
 
-
-
-[https://www.google.com/urlsa=i&amp;url=https%3A%2F%2Ftwitter.com%2Fhaithemdissem%2Fstatus%2F1004578267880460288&amp;psig=AOvVaw12mlnaBV11ki5eXmXMZfqC&amp;ust=1592298596102000&amp;source=images&amp;cd=vfe&amp;ved=0CAIQjRxqFwoTCJjPmtS8g-oCFQAAAAAdAAAAABAP]: 
-
-
-
 [https://about.gitlab.com/devops-tools/github-vs-gitlab.html#recent-github-announcements]: 
 
 ##### GitHub vs Bitbucket
