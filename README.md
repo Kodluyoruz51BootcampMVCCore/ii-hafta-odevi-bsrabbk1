@@ -3,11 +3,12 @@
 ## 6 Haziran Ödevleri:
 - [ ] Github'ın Gitflow'u ile diğer yaklaşımları arasındaki fark nedir? ( gitflow vs ..)
 
+ 
+ ##### GitHub vs Gitlab
 
-[https://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/]: 
+![](C:\Users\bebek\OneDrive\Masaüstü\github_comparison.png)
 
 
-##### GitHub vs Gitlab
 
 [https://about.gitlab.com/devops-tools/github-vs-gitlab.html#recent-github-announcements]: 
 
@@ -23,10 +24,28 @@
 - GitHub nedir? Açık kaynak ve özel geliştirme projeleri için güçlü işbirliği, inceleme ve kod yönetimi. GitHub, kodu arkadaşlarınızla, iş arkadaşlarınızla, sınıf arkadaşlarınızla ve yabancılarla paylaşabileceğiniz en iyi yerdir. Üç milyondan fazla insan birlikte harika şeyler oluşturmak için GitHub'ı kullanıyor.
 
   Azure DevOps "Proje Yönetimi" kategorisinde bir araç olarak sınıflandırılırken, GitHub "Kod İşbirliği ve Sürüm Kontrolü" altında gruplandırılabilir.
-  
+
+[https://stackshare.io/stackups/azure-devops-vs-github]: 
+
+##### GitHub vs SVN
+
+- SVN'nin ayrı bir sunucusu ve istemcisi vardır.
+
+- Yalnızca bir geliştiricinin üzerinde çalıştığı dosyalar yerel makinede tutulur ve geliştiricinin sunucu ile çalışarak çevrimiçi olması gerekir. Kullanıcılar dosyaları teslim alır ve sunucuda değişiklik yapar.
+
+
+
+[https://www.perforce.com/blog/vcs/git-vs-svn-what-difference]: 
+
+##### GitHub vs Jira Software
+
+[https://www.atlassian.com/software/jira/comparison/jira-vs-github]: 
+
+
+
+![]()![DfD6muTWAAE-Ei7](C:\Users\bebek\OneDrive\Masaüstü\DfD6muTWAAE-Ei7.jpg)
+ 
   # GİTHUB BİRLEŞTİRME YÖNTEMLERİ ARASINDAKİ FARK
-
-
 
 [https://rietta.com/blog/github-merge-types/]: 
 
@@ -45,8 +64,6 @@
 
   ### Squash and Merge
 
-  
-
 - Squashing, bir şubeye yeniden basmak gibi çalışır, 5 taahhütlü çekme talebi alabilir ve tek bir taahhütte ezebilirsiniz. Bu, birleştirme çekme isteğine benzer görünebilir, ancak farklıdır.
 
 - Geçmişte atılan commit’leri yeniden düzenlemek, isimlendirmek veya birleştirmek için kullanıyoruz.
@@ -59,8 +76,6 @@
   - Eğer daha sade, anlaşılabilir ve lineer bir commit history istiyor iseniz rebase sizin için daha yaralı olacaktır.
   - Eğer branchinizi push yaptıysanız merge, yapmadıysanız rebase i kullanmanız doğru olacaktır.
 
-
-
 ###       Merge Pull Request          
 
 -   Bir çekme isteğini birleştirmeye hazır olduğunuzda ve hakemler onayladığında, çekme isteği      görünümünün sağ üst kısmındaki Birleştir'i tıklayın. Projede yazma (veya yönetici) izniniz varsa bir    çekme isteğini birleştirebilirsiniz.
@@ -71,11 +86,7 @@
 
 [https://stackshare.io/stackups/azure-devops-vs-github]: 
 
-##### GitHub vs SVN
 
-- SVN'nin ayrı bir sunucusu ve istemcisi vardır.
-
-- Yalnızca bir geliştiricinin üzerinde çalıştığı dosyalar yerel makinede tutulur ve geliştiricinin sunucu ile çalışarak çevrimiçi olması gerekir. Kullanıcılar dosyaları teslim alır ve sunucuda değişiklik yapar.
 
 
 
