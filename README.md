@@ -5,8 +5,7 @@
 
  
  ##### [GitHub vs Gitlab](https://about.gitlab.com/devops-tools/github-vs-gitlab.html#recent-github-announcements)
-![](C:\Users\bebek\OneDrive\Masaüstü\github_comparison.png)
- 
+
 
 ##### GitHub vs Bitbucket
 
@@ -30,7 +29,6 @@
 - Yalnızca bir geliştiricinin üzerinde çalıştığı dosyalar yerel makinede tutulur ve geliştiricinin sunucu ile çalışarak çevrimiçi olması gerekir. Kullanıcılar dosyaları teslim alır ve sunucuda değişiklik yapar.
 
 
-
 [https://www.perforce.com/blog/vcs/git-vs-svn-what-difference]: 
 
 ##### GitHub vs Jira Software
@@ -38,16 +36,12 @@
 [https://www.atlassian.com/software/jira/comparison/jira-vs-github]: 
 
 
-
-![]()![DfD6muTWAAE-Ei7](C:\Users\bebek\OneDrive\Masaüstü\DfD6muTWAAE-Ei7.jpg)
  
   # GİTHUB BİRLEŞTİRME YÖNTEMLERİ ARASINDAKİ FARK
 
 [https://rietta.com/blog/github-merge-types/]: 
 
 ### Create a Merge Commit
-
-
 
 - Varsayılan seçenek Github'daki Çekme isteğini birleştirme seçeneği, tüm istekleri çekme isteğinden alır ve birleştirme işleminde yeni bir taahhütle ana şubeye ekler.
 - Örneğin, ilk taahhüt ve 2 yeni taahhüt içeren bir ana master şubemiz var, yeni taahhütler Bir ve İki.
