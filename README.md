@@ -71,9 +71,6 @@
 -   Bir çekme isteğini birleştirmeye hazır olduğunuzda ve hakemler onayladığında, çekme isteği      görünümünün sağ üst kısmındaki Birleştir'i tıklayın. Projede yazma (veya yönetici) izniniz varsa bir    çekme isteğini birleştirebilirsiniz.
 
   
-
-
-
 [https://stackshare.io/stackups/azure-devops-vs-github]: 
 
 # WHY GİT?
@@ -145,12 +142,15 @@ Burada bir **Application Service** metodu görüyoruz. **DDD(Domain Driven Desig
 
   Görüldüğü gibi çok basit gözüken bu işlem için dahi bütün bunları manuel yapmaya kalsak oldukça zamanımızı alacakken ABP framework tüm bunları otomatik yaparak bizi benzer ve rutin işlemleri tekrar tekrar yapma zahmetinden kurtarır.
 
-
-
 [http://devnot.com/2015/asp-net-boilerplate-modern-bir-web-uygulama-kutuphanesi/]: 
 
 # RAZOR PAGES NEDİR?###### 
 
+- ASP.NET Core 2.0 ile hayatımıza girdi.ASP.NET Core MVC alt yapısında sayfa bazlı web uygulama geliştirebileceğimizprogramlama modelidir.
+
+- MVC template'lerindeki klasör sayısını azaltmak ,sayfa bazlı uygulamaları kolayca geliştirmek için tasarlanmış bir model
+
+[https://www.minepla.net/2017/09/asp-net-core-razor-pages-nedir/]: 
 # Authentication
 
 [https://www.mediaclick.com.tr/blog/authentication-nedir]: 
@@ -168,8 +168,6 @@ Burada bir **Application Service** metodu görüyoruz. **DDD(Domain Driven Desig
 [https://www.it-swarm.dev/tr/console-application/]: 
 
 # Serialize/ Deserialize
-
-
 
 - Object bir veriyi Json'a çevirebilmek için o veriyi serialize etmemiz gerekir.
 - Bir Json veriyi ise istenilen bir object tipine çevirmek için Json veriyi deserialize etmemiz gerekir
@@ -261,8 +259,6 @@ Program.cs class’ıma gelip burada bir listenin içine test amaçlı 3 adet ve
   **}**
 
 
-
-
 Verinin serialize olmuş hali;
 
 
@@ -273,18 +269,14 @@ Json verinin istenilen objeye deserialize olmuş hali;
 ![img](http://seyyidozturk.com/Areas/Admin/Content/Image/images/deserializeprocess.png)
 
 
-
 [http://seyyidozturk.com/makale/json-ile-serialize-ve-deserialize-islemi#:~:text=Serialize%20terimi%20seri%20hale%20getirme,seriyi%20kald%C4%B1rma%20olarak%20dilimize%20%C3%A7evirebiliriz.]: 
-
-
 
 [https://www.c-sharpcorner.com/article/json-serialization-and-deserialization-in-c-sharp/#:~:text=In%20Serialization%2C%20it%20converts%20a%20custom%20.,by%20passing%20object(BlogSites).]: 
 
 
 
-- ASP.NET Core 2.0 ile hayatımıza girdi.ASP.NET Core MVC alt yapısında sayfa bazlı web uygulama geliştirebileceğimizprogramlama modelidir.
 
-- MVC template'lerindeki klasör sayısını azaltmak ,sayfa bazlı uygulamaları kolayca geliştirmek için tasarlanmış bir model.
+
  
 [https://www.minepla.net/2017/09/asp-net-core-razor-pages-nedir/]: 
 
@@ -292,7 +284,7 @@ Json verinin istenilen objeye deserialize olmuş hali;
 
 
 
-[https://www.perforce.com/blog/vcs/git-vs-svn-what-difference]: 
+
 
 ##### GitHub vs Jira Softwar
 
