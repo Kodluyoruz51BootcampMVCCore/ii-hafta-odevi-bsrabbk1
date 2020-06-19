@@ -274,7 +274,22 @@ Json verinin istenilen objeye deserialize olmuş hali;
 [https://www.c-sharpcorner.com/article/json-serialization-and-deserialization-in-c-sharp/#:~:text=In%20Serialization%2C%20it%20converts%20a%20custom%20.,by%20passing%20object(BlogSites).]: 
 
 
+# Model Ve View
 
+**Model :** Kullanıcaya göstermek ve manipule etmesini sağlamak istediğimiz verileri içereren nesneler.
+
+Business katmanımızdan aldığımız, kullanıcı için anlamlı veri içeren nesneler diyebiliriz.
+
+**View :** Kullanıcıya Model’i gösterdiğimiz ve Model üzerinde çeşitli manipulasyonlara izin verdiğimiz yer, Web olsun, windows olsun fark etmez, amaç kullanıcıya birşeyler göstermek ve inputlar almak.
+
+# Model View Controller (MVC)
+
+**MVC**‘de; **Model** data’nın, state’in ve business logic’in tutulduğu yerdir. Controller ve View’e bağlı değildir, böylece tekrar tekrar kullanılabilir. **View**, ui’ın render edildiği parçadır. Herhangi bir akla sahip değildir. **Controller** ise view ve model arasında bağlantıyı kuran parçacıktır. Örneğin bir butona tıklandığında ne aksiyon alınacağı bilgisi Controller’dadır. Burada tıklandıldığı bilgisi veren View, yapılacak işi içeren kısım ise Model’dir. Android’de ise Activity ve Fragment’ler Controller’a denk gelir.
+
+**MVP**(Model, View, Presenter)’nin en büyük farklı controller’ı parçalıyor olması. Böylece view/activity doğal bağına devam ederken activity, controller sorumluluklarından arınmış olur. **Model** MVC’yle aynı. **View’**de fark olarak bu sefer Activity ve fragment de view’dedir. Ancak herhangi bir logic implement edilmez. Burada hem view hem de presenter birer interface’i implement ediyor. Activity hem view’i hem de presenter’ı create eder.  Presenter kullanıcıdan gelen inputu view’i aracılığıyla alır.
+
+**MVVM**(Model, View, View-Model), View’in değişikliklere yanıt verebileceği event-based bir mimari kurmak istersek de karşımıza MVVM çıkacak. **Model**, MVC’yle aynı. View, viewmodelden sağlanan observable variable’ları bağlar. ViewModel, Model’i wrapleyip View tarafından ihtiyaç duyulan observable datanın sağlanmasından sorumlu.
+Yani aslında yine business logic’den model sorumlu. Data değiştiğinde ViewModel bundan haberdar oldu ve View’e haber verdi. View’de ui’ı update etti diyebiliriz.
 
 
  
