@@ -144,7 +144,7 @@ Burada bir **Application Service** metodu görüyoruz. **DDD(Domain Driven Desig
 
 [http://devnot.com/2015/asp-net-boilerplate-modern-bir-web-uygulama-kutuphanesi/]: 
 
-# RAZOR PAGES NEDİR?###### 
+# RAZOR PAGES NEDİR?
 
 - ASP.NET Core 2.0 ile hayatımıza girdi.ASP.NET Core MVC alt yapısında sayfa bazlı web uygulama geliştirebileceğimizprogramlama modelidir.
 
