@@ -282,8 +282,6 @@ Business katmanımızdan aldığımız, kullanıcı için anlamlı veri içeren 
 
 **View :** Kullanıcıya Model’i gösterdiğimiz ve Model üzerinde çeşitli manipulasyonlara izin verdiğimiz yer, Web olsun, windows olsun fark etmez, amaç kullanıcıya birşeyler göstermek ve inputlar almak.
 
-# Model View Controller (MVC)
-
 **MVC**‘de; **Model** data’nın, state’in ve business logic’in tutulduğu yerdir. Controller ve View’e bağlı değildir, böylece tekrar tekrar kullanılabilir. **View**, ui’ın render edildiği parçadır. Herhangi bir akla sahip değildir. **Controller** ise view ve model arasında bağlantıyı kuran parçacıktır. Örneğin bir butona tıklandığında ne aksiyon alınacağı bilgisi Controller’dadır. Burada tıklandıldığı bilgisi veren View, yapılacak işi içeren kısım ise Model’dir. Android’de ise Activity ve Fragment’ler Controller’a denk gelir.
 
 **MVP**(Model, View, Presenter)’nin en büyük farklı controller’ı parçalıyor olması. Böylece view/activity doğal bağına devam ederken activity, controller sorumluluklarından arınmış olur. **Model** MVC’yle aynı. **View’**de fark olarak bu sefer Activity ve fragment de view’dedir. Ancak herhangi bir logic implement edilmez. Burada hem view hem de presenter birer interface’i implement ediyor. Activity hem view’i hem de presenter’ı create eder.  Presenter kullanıcıdan gelen inputu view’i aracılığıyla alır.
