@@ -154,9 +154,7 @@ Burada bir **Application Service** metodu görüyoruz. **DDD(Domain Driven Desig
 - ASP.NET Core 2.0 ile hayatımıza girdi.ASP.NET Core MVC alt yapısında sayfa bazlı web uygulama geliştirebileceğimizprogramlama modelidir.
 
 - MVC template'lerindeki klasör sayısını azaltmak ,sayfa bazlı uygulamaları kolayca geliştirmek için tasarlanmış bir model.
-
-  
-
+ 
 [https://www.minepla.net/2017/09/asp-net-core-razor-pages-nedir/]: 
 
 
@@ -165,7 +163,7 @@ Burada bir **Application Service** metodu görüyoruz. **DDD(Domain Driven Desig
 
 [https://www.perforce.com/blog/vcs/git-vs-svn-what-difference]: 
 
-##### GitHub vs Jira Software
+##### GitHub vs Jira Softwar
 
 [https://www.atlassian.com/software/jira/comparison/jira-vs-github]: 
 
