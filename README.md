@@ -149,7 +149,138 @@ Burada bir **Application Service** metodu görüyoruz. **DDD(Domain Driven Desig
 
 [http://devnot.com/2015/asp-net-boilerplate-modern-bir-web-uygulama-kutuphanesi/]: 
 
-# RAZOR PAGES NEDİR?
+# RAZOR PAGES NEDİR?###### 
+
+# Authentication
+
+[https://www.mediaclick.com.tr/blog/authentication-nedir]: 
+
+
+
+# Individual Account
+
+[https://www.c-sharpcorner.com/UploadFile/2b481f/individual-account-in-Asp-Net-web-api/]: 
+
+###### 
+
+# Console Application
+
+[https://www.it-swarm.dev/tr/console-application/]: 
+
+# Serialize/ Deserialize
+
+
+
+- Object bir veriyi Json'a çevirebilmek için o veriyi serialize etmemiz gerekir.
+- Bir Json veriyi ise istenilen bir object tipine çevirmek için Json veriyi deserialize etmemiz gerekir
+- Deserialize terimi seriyi kaldırmaktır diyebiliriz.
+
+
+
+ **public class Person**
+
+  **{**
+
+​    **public string FirstName { get; set; }**
+
+​    **public string LastName { get; set; }**
+
+  **}**
+
+
+
+Object veriyi Json veriye çevirebileceğim ve Json veriyi object bir veriye çevirebileceğim yapıyı Helper adında bir class açarak extension metot şeklinde kullanacağım.
+
+
+  **public static class Helper**
+
+  **{**
+
+​    **public static string ToJson(this object obj)**
+
+​    **{**
+
+​      **var item = JsonConvert.SerializeObject(obj);**
+
+​      **return item;**
+
+​    **}**
+
+ 
+
+​    **public static T ToObject(this string item)**
+
+​    **{**
+
+​      **var obj = JsonConvert.DeserializeObject(item);**
+
+​      **return obj;**
+
+​    **}**
+
+  **}**
+
+ 
+Program.cs class’ıma gelip burada bir listenin içine test amaçlı 3 adet veri atıyorum. Bu 3 veriyi ilk önce serialize ediyorum ve sonrasında deserialize ederek List tipindeki veriyi json veriye çevirip tekrar bu json veriyi List tipine çevirerek serialize ve desirealize işlemlerimi gerçekleştirmiş olduyorum.
+
+
+  **class Program**
+
+  **{**
+
+​    **static void Main(string[] args)**
+
+​    **{**
+
+​      **var lstPerson = new List();**
+
+​      **for (int i = 1; i < 4; i++)**
+
+​      **{**
+
+​        **lstPerson.Add(new Person**
+
+​        **{**
+
+​          **FirstName = i+".Ad",**
+
+​          **LastName = i+".Soyad"**
+
+​        **});**
+
+​      **}**
+
+ 
+
+​      **var serialize = lstPerson.ToJson();**
+
+​      **var deserialize = serialize.ToObject>();**
+
+​    **}**
+
+  **}**
+
+
+
+
+Verinin serialize olmuş hali;
+
+
+![img](http://seyyidozturk.com/Areas/Admin/Content/Image/images/serializeprocess.png)
+
+Json verinin istenilen objeye deserialize olmuş hali;
+
+![img](http://seyyidozturk.com/Areas/Admin/Content/Image/images/deserializeprocess.png)
+
+
+
+[http://seyyidozturk.com/makale/json-ile-serialize-ve-deserialize-islemi#:~:text=Serialize%20terimi%20seri%20hale%20getirme,seriyi%20kald%C4%B1rma%20olarak%20dilimize%20%C3%A7evirebiliriz.]: 
+
+
+
+[https://www.c-sharpcorner.com/article/json-serialization-and-deserialization-in-c-sharp/#:~:text=In%20Serialization%2C%20it%20converts%20a%20custom%20.,by%20passing%20object(BlogSites).]: 
+
+
 
 - ASP.NET Core 2.0 ile hayatımıza girdi.ASP.NET Core MVC alt yapısında sayfa bazlı web uygulama geliştirebileceğimizprogramlama modelidir.
 
