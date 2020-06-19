@@ -76,6 +76,89 @@
 
 [https://stackshare.io/stackups/azure-devops-vs-github]: 
 
+# WHY GİT?
+
+According to the latest [Stack Overflow developer survey](https://insights.stackoverflow.com/survey/2017#technology), more than 70 percent of developers use Git, making it the most-used VCS in the world. Git is commonly used for both open source and commercial software development, **with significant benefits** for individuals, teams and businesses.
+
+- Stackowerflow anketine göre geliştiricilerin çoğunluğu GİT kullanıyor ve bu da GİT'i en çok kullanılar VCS yapıyor. Açık kaynak kodlu ve ticari geliştirmeler için çok yaygın kullanıma sahip.
+
+- Geliştiricilerin herhangi bir projedeki değişikliklerin ,alınan kararların ve ilerlemelerin tüm zaman çizelgesini tek bir yerde görneylerini sağlar.
+- DVCS ile kaynak bütünlüğü korunur.geliştiriciler güvenle üretim kodunda değişiklik önerebilir.
+
+# ASP.NET Boilerplate-Web Application Framework
+
+- Yazılım geliştirme görevlerini kurallara göre otomatik hale getirir.
+
+- Projelerde **Authorization, Validation, Exception Handling, Logging, Localization, Database Connection Management, Setting Management, Audit Logging bunlardan bazıları. Ayrıca Katmanlı ve Modüler Mimari, Domain Driven Design, Dependency Injection** gibi katmanları best practice diyebileceğimiz mimari yapılar üzerine kurar, uygulama içerisindeki kodların belli bir mimariye göre benzer/ortak yapıda geliştirilmesi için çabalar.
+
+- ```
+  public class TaskAppService : ApplicationService, ITaskAppService
+      {
+          private readonly IRepository _taskRepository;
+  
+          public TaskAppService(IRepository taskRepository)
+          {
+              _taskRepository = taskRepository;
+          }
+  
+          [AbpAuthorize(MyPermissions.UpdatingTasks)]
+          public async Task UpdateTask(UpdateTaskInput input)
+          {
+              Logger.Info("Updating a task for input: " + input);
+  
+              var task = await _taskRepository.FirstOrDefaultAsync(input.TaskId);
+              if (task == null)
+              {
+                  throw new UserFriendlyException(L("CouldNotFoundTheTask"));
+              }
+  
+              input.MapTo(task);
+          }
+      }
+  ```
+
+Burada bir **Application Service** metodu görüyoruz. **DDD(Domain Driven Design)**’de Application Service’ler önyüzden direkt olarak kullanılan/çağırılan sınıflardır. UpdateTask metodunun AJAX ile çağırıldığını düşünebilirsiniz. Burada ASP.NET Boilerplate’in (kısaca ABP) bize ne sağladığına bakalım:
+
+- **[Dependency Injection](http://www.aspnetboilerplate.com/Pages/Documents/Dependency-Injection)**: Bu (base class’dan dolayı) bir application service olduğu için Transient olarak Dependency Injection sistemine otomatik olarak kaydedilmiştir. Kendisi için gereken tüm servisleri (bu örnekte sadece bir Repository) direkt olarak inject edebilir (constructor ya da property injection yapılabilir). ABP conventional, kolay kullanımlı ve hazır bir DI altyapısı sağlar.
+
+- [**Repository**](http://www.aspnetboilerplate.com/Pages/Documents/Repositories): Her Entity için otomatik olarak bir repository oluşturulur. IRepository<Task> şeklinde Task repository’sini kullanıyoruz burada. IRepository’nin birçok hazır metodu var. FirstOrDefault bunlardan birisi.
+
+- [**Authorization**](http://www.aspnetboilerplate.com/Pages/Documents/Authorization): Eğer bu servisi çağıran kullanıcının “task güncelleme” yetkisi yoksa daha metod çağrısı başlamadan uygun bir authorization exception fırlatır. Attribute kullanarak authorization kontrolünü basitleştirmiş oluyoruz.
+
+- [**Validation**](http://www.aspnetboilerplate.com/Pages/Documents/Authorization): UpdateTaskInput DTO’su (Data Transfer Object) içerisinde Task Entity’siyle isim ve tip olarak birebir eşleşen property’ler var. Normalde ilk iş bunların validate edilmesi gerekiyor. ABP data annotation’lar ve custom validation teknikleri kullanarak gelen input’un property’lerini otomatik olarak validate eder, eğer valid değilse client’ın anlayacağı formatta bir Exception fırlatır (AJAX çağrısı için uygun bir JSON döner örneğin). Ayrıca nesnenin kendisinin null olmasına da izin vermez, böylece input == null mı kontrolüne gerek kalmaz.
+
+- [**Audit Logging**](http://www.aspnetboilerplate.com/Pages/Documents/Audit-Logging): Eğer audit logging açıksa bu metod çağrısını yapan kullanıcı, çağrının yapıldığı zaman, IP… gibi bilgilerle beraber çağrılan metod ve parametrelerini kaydeder. Ayrıca süre ölçümü de yapar, böylece yavaş metodlarımızı tespit edip kontrol edebiliriz.
+
+- [**Unit Of Work**](http://www.aspnetboilerplate.com/Pages/Documents/Unit-Of-Work): Her application service metodu bir unit of work kabul edilir. ABP, metoda girerken veritabanı bağlantısını otomatik olarak açıp bir transaction başlatır. Eğer metod hiçbir Exception fırlatmadan başarıyla tamamlandıysa transaction otomatik olarak commit edilerek bağlantı kapatılır. Böylece metod içerisinde farklı repository’leri dahi kullansak tüm işlemler atomic olmuş olur. Ayrıca Entity’lerde yapılan tüm değişiklikler eğer hata olmazsa metod bitiminde otomatik olarak kaydedilir. Bu nedenle repository.Update(task) gibi bir kod çağrısına dahi gerek kalmamış oluyor.Burada birçok ayrıntı ve konfigurasyon var ancak varsayılan davranış bu şekildedir.
+
+- [**Exception Handling**](http://www.aspnetboilerplate.com/Pages/Documents/Handling-Exceptions): Bir web uygulamasında, bu metod bir Exception fırlatırsa bu Exception otomatik olarak handle edilir, client’ın request türüne göre (AJAX ya da normal request) uygun bir dönüş değeri gönderilir client’a. Client tarafında da bu otomatik olarak handle edilerek kullanıcıya uygun hata mesajı gösterilir. UserFriendlyException özel bir exception türü olup direkt olarak mesaj kullanıcıya gösterilir. Diğer Exception’lar sadece loglanır ve kullanıcıya genel bir hata mesajı gösterilir.
+
+- [**Logging**](http://www.aspnetboilerplate.com/Pages/Documents/Logging): UpdateTask metodunun ilk satırında direkt olarak hazır Logger nesnesini kullanarak log yazabiliyoruz. Varsayılan loglama kütüphanesi olarak Log4Net kullanılır.
+
+- [**Localization**](http://www.aspnetboilerplate.com/Pages/Documents/Localization): Dikkat edilirse Exception fırlatılırken L adın bir metod kullanıldı. Bu da base class’dan gelen bir metod olup verilen key’e ve o anki kullanıcının diline göre ilgili lokalizasyon metnini verir.
+
+- [**Auto Mapping**](http://www.aspnetboilerplate.com/Pages/Documents/Data-Transfer-Objects#DocAutoMapping): Son satırda ABP’nin MapTo extension metodunu görüyoruz. ABP, Automapper kullanarak bir nesneyi diğerine map edebilir. Böylece gelen input’daki (daha önce validate edilmiş) verilerle Entity’deki property’leri güvenle ezebiliyoruz.
+
+- [**Dynamic Web API Layer**](http://www.aspnetboilerplate.com/Pages/Documents/Dynamic-Web-API): Bu application service aslında basit bir sınıftır. Browser’dan AJAX’la bunu çağırabilmek için genellikle wrapper şeklinde bir Web API Controller geliştirilir. ABP bu controller’ı runtime’da otomatik yaratır, böylece client’dan doğrudan application service’ler kullanılabilir olur.
+
+- [**Javascript AJAX Proxy**](http://www.aspnetboilerplate.com/Pages/Documents/Dynamic-Web-API#DocDynamicProxy): Dinamik oluşturulan Web API’yi çağırmak için de ABP tarafından yine dinamik olarak bir javascript proxy’si oluşturulur. Böylece javascript’den metod çağırır gibi application service’leri kullanabiliriz.
+
+  Görüldüğü gibi çok basit gözüken bu işlem için dahi bütün bunları manuel yapmaya kalsak oldukça zamanımızı alacakken ABP framework tüm bunları otomatik yaparak bizi benzer ve rutin işlemleri tekrar tekrar yapma zahmetinden kurtarır.
+
+
+
+[http://devnot.com/2015/asp-net-boilerplate-modern-bir-web-uygulama-kutuphanesi/]: 
+
+# RAZOR PAGES NEDİR?
+
+- ASP.NET Core 2.0 ile hayatımıza girdi.ASP.NET Core MVC alt yapısında sayfa bazlı web uygulama geliştirebileceğimizprogramlama modelidir.
+
+- MVC template'lerindeki klasör sayısını azaltmak ,sayfa bazlı uygulamaları kolayca geliştirmek için tasarlanmış bir model.
+
+  
+
+[https://www.minepla.net/2017/09/asp-net-core-razor-pages-nedir/]: 
+
 
 
 
