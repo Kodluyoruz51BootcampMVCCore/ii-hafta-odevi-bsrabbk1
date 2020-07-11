@@ -248,7 +248,6 @@ Program.cs class’ıma gelip burada bir listenin içine test amaçlı 3 adet ve
 
 ​      **}**
 
- 
 
 ​      **var serialize = lstPerson.ToJson();**
 
@@ -261,18 +260,15 @@ Program.cs class’ıma gelip burada bir listenin içine test amaçlı 3 adet ve
 
 Verinin serialize olmuş hali;
 
-
 ![img](http://seyyidozturk.com/Areas/Admin/Content/Image/images/serializeprocess.png)
 
 Json verinin istenilen objeye deserialize olmuş hali;
 
 ![img](http://seyyidozturk.com/Areas/Admin/Content/Image/images/deserializeprocess.png)
 
-
 [http://seyyidozturk.com/makale/json-ile-serialize-ve-deserialize-islemi#:~:text=Serialize%20terimi%20seri%20hale%20getirme,seriyi%20kald%C4%B1rma%20olarak%20dilimize%20%C3%A7evirebiliriz.]: 
 
 [https://www.c-sharpcorner.com/article/json-serialization-and-deserialization-in-c-sharp/#:~:text=In%20Serialization%2C%20it%20converts%20a%20custom%20.,by%20passing%20object(BlogSites).]: 
-
 
 # Model Ve View
 
@@ -289,9 +285,21 @@ Business katmanımızdan aldığımız, kullanıcı için anlamlı veri içeren 
 **MVVM**(Model, View, View-Model), View’in değişikliklere yanıt verebileceği event-based bir mimari kurmak istersek de karşımıza MVVM çıkacak. **Model**, MVC’yle aynı. View, viewmodelden sağlanan observable variable’ları bağlar. ViewModel, Model’i wrapleyip View tarafından ihtiyaç duyulan observable datanın sağlanmasından sorumlu.
 Yani aslında yine business logic’den model sorumlu. Data değiştiğinde ViewModel bundan haberdar oldu ve View’e haber verdi. View’de ui’ı update etti diyebiliriz.
 
+[https://www.minepla.net/2017/09/asp-net-core-razor-pages-nedir/]:
+#### MVU (Model-View-Update) ?
 
- 
-[https://www.minepla.net/2017/09/asp-net-core-razor-pages-nedir/]: 
+- Elm mimarisi olarak bilinir.
+
+- Oldukça basit bir mimaridir.
+
+  Model uygulama hakkında önemli bilgileri içeren veri yapısıdır.
+
+  View, modelimizi kullanıcıya sunduğumuz yerdir.
+
+  Update, modeli işler ve uygulamanın durumunu günceller.
+
+
+
 
 
 
